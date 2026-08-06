@@ -124,7 +124,73 @@ Apply For Loan
 </div>
 
 </section>
+<section class="container my-5">
+  <div class="row">
+    <div class="col-lg-4 text-center">
+      <img src="images/founder.png"
+           class="img-fluid rounded shadow"
+           style="max-width:250px;">
+    </div>
 
+    <div class="col-lg-8">
+      <h2>Founder & Managing Director</h2>
+      <h3 style="color:#082b63;">Mr. Ariful Islam</h3>
+      <p>
+        Under the leadership of Mr. Ariful Islam,
+        AAFS Financial Services is committed to providing
+        trusted, transparent and customer-focused financial
+        solutions across India.
+      </p>
+
+      <a href="#" class="btn btn-warning">
+        Know More
+      </a>
+    </div>
+  </div>
+</section> 
+  <section class="container my-5">
+<h2 class="mb-4">EMI Calculator</h2>
+
+<div class="row">
+<div class="col-md-6">
+
+<input type="number" id="loan" class="form-control mb-3" placeholder="Loan Amount">
+
+<input type="number" id="rate" class="form-control mb-3" placeholder="Interest Rate %">
+
+<input type="number" id="years" class="form-control mb-3" placeholder="Years">
+
+<button onclick="calculateEMI()" class="btn btn-primary">
+Calculate EMI
+</button>
+
+</div>
+
+<div class="col-md-6">
+<h3 id="result">Monthly EMI: ₹0</h3>
+</div>
+</div>
+</section>
+
+<script>
+function calculateEMI(){
+
+let P=parseFloat(document.getElementById("loan").value);
+
+let annual=parseFloat(document.getElementById("rate").value);
+
+let years=parseFloat(document.getElementById("years").value);
+
+let r=annual/12/100;
+
+let n=years*12;
+
+let emi=(P*r*Math.pow(1+r,n))/(Math.pow(1+r,n)-1);
+
+document.getElementById("result").innerHTML="Monthly EMI: ₹"+emi.toFixed(2);
+
+}
+</script>
 <div class="container">
 
 <div class="row">
